@@ -38,7 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangotutorial',  # Custom app for the Django tutorial
+    'tailwind',  # Tailwind CSS integration
+    'theme',  # Custom theme for Tailwind CSS	
+    'django_browser_reload',  # For live reloading during development
 ]
+
+# Tailwind CSS settings
+TAILWIND_APP_NAME = 'theme'  # Name of the Tailwind app
+INTERNAL_IPS = ['127.0.0.1']  # For development purposes, allows live reloading
+
+NPM_BIN_PATH ="C:/Program Files/nodejs/npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
+    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Middleware for live reloading
 ]
 
 ROOT_URLCONF = 'DjangoLearning.urls'
