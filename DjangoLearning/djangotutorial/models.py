@@ -17,6 +17,7 @@ class DjangoVariety(models.Model):
         choices=DJANGO_TYPE_CHOICE,
         default='DJ',
     )
+    description = models.TextField(default='')
 
 
     def __str__(self):
